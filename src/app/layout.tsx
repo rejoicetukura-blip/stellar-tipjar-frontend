@@ -6,6 +6,7 @@ import { InstallPrompt } from "@/components/InstallPrompt";
 import { Navbar } from "@/components/Navbar";
 import { WalletProvider } from "@/contexts/WalletContext";
 import "@/styles/globals.css";
+import { buildMetadata } from "@/utils/seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
