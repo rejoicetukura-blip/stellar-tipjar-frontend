@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Navbar } from "@/components/Navbar";
+import { WalletProvider } from "@/contexts/WalletContext";
 import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,12 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen">
-          <Navbar />
-          <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-            <ErrorBoundary>{children}</ErrorBoundary>
-          </main>
-        </div>
+        <WalletProvider>
+          <div className="min-h-screen">
+            <Navbar />
+            <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">{children}</main>
+          </div>
+        </WalletProvider>
       </body>
     </html>
   );
